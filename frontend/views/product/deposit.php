@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 use common\models\User;
 use frontend\models\Productcart;
 use frontend\models\Delivery;
-/*use frontend\models\Profile;*/
+use frontend\models\Countries;
 use frontend\models\Orders;
 
 /* @var $this yii\web\View */
@@ -14,7 +14,7 @@ use frontend\models\Orders;
 /* @var $form ActiveForm */
 
 $orderId = Orders::find()->where(['userId'=>Yii::$app->user->id])->joinWith('user')->all();
-//$code = Profile::find()->one();
+$code = ArrayHelper::map(Countries::find()->all(), 'couPhoneCode', 'countryName');
 $order = Orders::find()->where(['userId'=>Yii::$app->user->id])->one();
 $delivery = ArrayHelper::map(Delivery::find()->all(), 'deliveryId', 'deliveryDesc');
 ?>
@@ -38,6 +38,7 @@ $delivery = ArrayHelper::map(Delivery::find()->all(), 'deliveryId', 'deliveryDes
             <?= $form->field($model, 'orderId')->hiddenInput(['value' => $orderId[0]->orderId, 'readonly'=>true])->label(false) ?>
            <?= $form->field($model, 'deliveryId')->dropDownList($delivery,['prompt'=>'Select Delivery Address'])->label(false) ?>
             <?= $form->field($model, 'transAmount')->hiddenInput(['value' => $order->total, 'readonly'=>true])->label(false)  ?>
+            <?= $form->field($model, 'phoneCode')->textInput()->dropDownList($code,['prompt'=>'Select your Phonecode'])->label(false) ?>
             <?= $form->field($model, 'mpesaNumber') ?>
             <?= $form->field($model, 'createdBy')->hiddenInput(['value' =>Yii::$app->user->id, 'readonly'=>true])->label(false) ?>
             <?= $form->field($model, 'MerchantRequestId')->hiddenInput(['value' =>Yii::$app->user->id, 'readonly'=>true])->label(false) ?>
