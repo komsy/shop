@@ -23,7 +23,6 @@ $Cartitems= new frontend\models\Cartitems;
 
 <?php foreach ($products as $product) {?>
 
-<? var_dump($product); exit(); ?>
 <div class="card">
 	<div class="row">
 		<aside class="col-sm-5 border-right">

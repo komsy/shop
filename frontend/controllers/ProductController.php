@@ -396,7 +396,7 @@ class ProductController extends Controller
         $PartyA = $postData['phoneCode'].$postData['mpesaNumber'];
         $PartyB = 174379;
      //   $UserId = $postData['userId'];
-        $CallBackURL = 'https://22cb3b0912bd.ngrok.io/shop/xyz/confirm?token=KUstudents51234567qwerty';
+        $CallBackURL = 'https://a41737270d1c.ngrok.io/shop/xyz/confirm?token=KUstudents51234567qwerty';
         $AccountReference =  '3Wies';
         $TransactionDesc = '3Wies';
         

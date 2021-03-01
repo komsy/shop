@@ -31,8 +31,8 @@ class XyzController extends \yii\web\Controller
         $shortcode='601378';
         $consumerkey ="ITWg7obHCx5JDkvL7QwmJ5czvWB8EtqU";
         $consumersecret ="zxhDdSRGi208JYZo";
-        $validationurl="https://22cb3b0912bd.ngrok.io/shop/xyz/validate?token=KUstudents51234567qwerty";
-        $confirmationurl="https://22cb3b0912bd.ngrok.io/shop/xyz/confirm?token=KUstudents51234567qwerty";
+        $validationurl="https://a41737270d1c.ngrok.io/shop/xyz/validate?token=KUstudents51234567qwerty";
+        $confirmationurl="https://a41737270d1c.ngrok.io/shop/xyz/confirm?token=KUstudents51234567qwerty";
         /* testing environment, comment the below two lines if on production */
         $authenticationurl='https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
         $registerurl = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl';

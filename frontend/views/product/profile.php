@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
@@ -14,6 +15,7 @@ use frontend\models\Delivery;
 $currency = ArrayHelper::map(Currency::find()->all(), 'currencyId', 'currencyName');
 $code = ArrayHelper::map(Countries::find()->all(), 'couPhoneCode', 'countryName');
 $dell = ArrayHelper::map(Delivery::find()->all(), 'deliveryId', 'deliveryDesc');
+
 ?>
 <div class="container">
 <div class="profile">
@@ -36,4 +38,4 @@ $dell = ArrayHelper::map(Delivery::find()->all(), 'deliveryId', 'deliveryDesc');
 
 </div><!-- profile -->
 </div>
-<a href="<?= Url::to(['product/profile'])?>"><button type="button" val="<?=$list?>" class="btn btn-lg btn-success pull-right deposit">Checkout</button></a>
+<a href="<?= Url::to(['product/profile'])?>"><button type="button"  class="btn btn-lg btn-success pull-right deposit">Checkout</button></a>
